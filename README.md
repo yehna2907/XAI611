@@ -19,7 +19,7 @@ train/abseiling/-7kbO0v4hag_000107_000117.mp4
 train/abseiling/-bwYZwnwb8E_000013_000023.mp4
 ```
 
-When the download is complete, the videos should be resized to 320. 
+When the download is complete, the videos should be resized to 320.
 The code for resizing can also be found here: [MVFNet](https://github.com/whwu95/MVFNet/blob/main/data_process/DATASETS.md).
 
 

@@ -12,7 +12,7 @@
 ## Data Preparation
 
 #### Download and Preprocessing
-Download Kinetics-400 and UCF101. Please refer to [MVFNet](https://github.com/whwu95/MVFNet/blob/main/data_process/DATASETS.md) repo for the detailed guide of data processing.  
+Download Kinetics-400 and UCF101. Please refer to [MVFNet](https://github.com/whwu95/MVFNet/blob/main/data_process/DATASETS.md) repo for downloading the datasets.  
 Make sure that the videos are under the class directory. For example:
 ```sh
 train/abseiling/-7kbO0v4hag_000107_000117.mp4

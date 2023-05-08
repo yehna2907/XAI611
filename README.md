@@ -11,13 +11,15 @@
 
 ## Data Preparation
 
-#### Download Datasets
+#### Download and Preprocessing
 Download Kinetics-400 and UCF101. Please refer to [MVFNet](https://github.com/whwu95/MVFNet/blob/main/data_process/DATASETS.md) repo for the detailed guide of data processing.  
-The annotation file is a text file with multiple lines, and each line indicates the directory to frames of a video, total frames of the video and the label of a video, which are split with a whitespace. Here is the format: 
+Make sure that the videos are under the class directory. For example:
 ```sh
-abseiling/-7kbO0v4hag_000107_000117 300 0
-abseiling/-bwYZwnwb8E_000013_000023 300 0
+train/abseiling/-7kbO0v4hag_000107_000117.mp4
+train/abseiling/-bwYZwnwb8E_000013_000023.mp4
 ```
+
+After that, the videos should be resized to 320. The code for resizing can also be found here: [MVFNet](https://github.com/whwu95/MVFNet/blob/main/data_process/DATASETS.md).
 
 
 ## Pre-train on Kinetics-400
@@ -28,7 +30,7 @@ sh scripts/run_train.sh  configs/k400/k400_train_video_vitb-32-f8.yaml
 
 If you're using multiple GPUs, edit the number of `--nproc_per_node` in script file.
 ```sh
-# For example, if you are training with 8 GPUs do, modify it as follows:
+# For example, if you are training with 4 GPUs do, modify it as follows:
 python -m torch.distributed.launch --master_port 1237 --nproc_per_node=4 \
          train.py  --config ${config} --log_time $now
 ```
